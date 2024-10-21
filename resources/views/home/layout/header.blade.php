@@ -15,13 +15,9 @@
                 <li> <a href=".howitworks">How it Works</a></li>
                 <!-- <li> <a href="">About</a></li> -->
                 <li> <a href=".contact-us">Contact Us</a></li>
-                <a href="/guest-home" class="bg-primary px-2 py-2 text-white view-rental-btn">View Rental Cars</a>
+                <a href="/home" class="bg-primary px-2 py-2 text-white view-rental-btn">View Rental Cars</a>
     </div>
 
-    <div class="header-col-2">
-                <li> <a href="/sign-up">Sign up</a></li>
-                <li> <a href="/log-in">Log in</a></li>
-    </div>
 
     <div class="home-sidebar-div">
         <a href="#" id="home-side-bar-btn" class="home-sidebar-toggle"><i class="fas fa-bars"></i></a>

@@ -24,7 +24,7 @@
                     <h4><sub>₱ </sub>54,000 | Monthly</h4>
                 </div>
                 <div class="button">
-                    <a href="/guest-pickup">View Rental</a>
+                    <a href="/pickup">View Rental</a>
                 </div>
             </div>
         </div>
@@ -43,7 +43,7 @@
                     <h4><sub>₱ </sub>60,000 | Monthly</h4>
                 </div>
                 <div class="button">
-                    <a href="/guest-van">View Rental</a>
+                    <a href="/van">View Rental</a>
                 </div>
                
             </div>
@@ -69,7 +69,7 @@
                     <h4><sub>₱ </sub>45,300 | Monthly</h4>
                 </div>
                 <div class="button">
-                    <a href="/guest-7seaters">View Rental</a>
+                    <a href="/7seaters">View Rental</a>
                 </div>
             </div>
         </div>
@@ -88,7 +88,7 @@
                     <h4><sub>₱ </sub>30,000 | Monthly</h4>
                 </div>
                 <div class="button">
-                    <a href="/guest-sedan">View Rental</a>
+                    <a href="/sedan">View Rental</a>
                 </div>
                
             </div>
@@ -115,7 +115,7 @@
                     <h4><sub>₱ </sub>25,000 | Monthly</h4>
                 </div>
                 <div class="button">
-                    <a href="/guest-hatchback">View Rental</a>
+                    <a href="/hatchback">View Rental</a>
                 </div>
             </div>
         </div>

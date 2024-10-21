@@ -33,10 +33,10 @@
 
                         <div style="width: 100%;">
                             <label class="form-label">Full Name</label>
-                            <input type="text" id="name" class="form-control " name="name" placeholder="Ex. Cruz" value="{{ Auth::user()->first_name }} {{ Auth::user()->middle_name }} {{ Auth::user()->last_name }} " onkeyup="javascript:capitalize(this);" pattern=".{8,}" required>
+                            <input type="text" id="name" class="form-control " name="name" placeholder="Ex. Cruz"  required>
                             <!-- <span class="text-danger" id="errorname">@error('name') {{$message}} @enderror</span> -->
                             <div class="invalid-feedback">
-                                Enter Name (min:8)
+                                Enter Name:
                             </div>
                         </div>
 
@@ -64,7 +64,7 @@
 
                         <div style="width: 100%;" class="pb-3">
                             <label class="form-label">Contact Email</label>
-                            <input type="email" class="form-control" id="email" name="con_email" placeholder="Enter Email" value="{{ Auth::user()->email }} " onkeyup="javascript:capitalize(this);" required>
+                            <input type="email" class="form-control" id="email" name="con_email" placeholder="Enter Email" onkeyup="javascript:capitalize(this);" required>
                             <!-- <span class="text-danger" id="erroremail">@error('con_email') {{$message}} @enderror</span> -->
                             <div class="invalid-feedback">
                                 Enter valid contact email.

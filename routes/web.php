@@ -119,111 +119,54 @@ Route::middleware(['preventBackHistory'])->group(function () {
 
 
 
-// Home Routes
-Route::middleware(['preventBackHistory'])->group(function () {
-
-    Route::middleware(['guest.middleware'])->group(function () {
-
-        Route::get('/guest-home', [AddCarController::class,'guest_allcars']);
-        Route::get('/guestviewcar/{slug}', [AddCarController::class,'guest_viewvehicle']);
-        Route::get('/guest-van', [AddCarController::class,'guest_van']);
-        Route::get('/guest-7seaters', [AddCarController::class,'guest_7seaters']);
-        Route::get('/guest-pickup', [AddCarController::class,'guest_pickup']);
-        Route::get('/guest-hatchback', [AddCarController::class,'guest_hatchback']);
-        Route::get('/guest-sedan', [AddCarController::class,'guest_sedan']);
-        Route::get('/cars/guest-search', [AddCarController::class,'guest_search_rental'])->name('car.home-search');
-
-        Route::post('/email', [EmailRequestController::class, 'sendEmail'])->name('send.email');
-
-        Route::middleware(['user-already-loggedin'])->group(function () {
-            Route::get('/log-in', [LoginController::class,'loginroute'])->name('client_login');
-
-            Route::get('/sign-up', [SigninController::class,'signinroute']);
-            
-        });
-    });
 
 
+
+    Route::get('/guest-home', [AddCarController::class,'guest_allcars']);
+    Route::get('/guestviewcar/{slug}', [AddCarController::class,'guest_viewvehicle']);
+    Route::get('/guest-van', [AddCarController::class,'guest_van']);
+    Route::get('/guest-7seaters', [AddCarController::class,'guest_7seaters']);
+    Route::get('/guest-pickup', [AddCarController::class,'guest_pickup']);
+    Route::get('/guest-hatchback', [AddCarController::class,'guest_hatchback']);
+    Route::get('/guest-sedan', [AddCarController::class,'guest_sedan']);
+    Route::get('/cars/guest-search', [AddCarController::class,'guest_search_rental'])->name('car.home-search');
+
+    Route::post('/email', [EmailRequestController::class, 'sendEmail'])->name('send.email');
 
 
 // Main Routes
 
 
-    Route::middleware(['auth','verified','client', 'verified.redirect'])->group(function () {
 
-        Route::get('/mainviewcar/{slug}', [AddCarController::class,'main_viewvehicle']);
+    Route::get('/mainviewcar/{slug}', [AddCarController::class,'main_viewvehicle']);
 
-        Route::get('home', [AddCarController::class,'main_allcars']);
-        Route::get('/van', [AddCarController::class,'main_van']);
-        Route::get('/7seaters', [AddCarController::class,'main_7seaters']);
-        Route::get('/pickup', [AddCarController::class,'main_pickup']);
-        Route::get('/hatchback', [AddCarController::class,'main_hatchback']);
-        Route::get('/sedan', [AddCarController::class,'main_sedan']);
-        Route::get('/cars/search', [AddCarController::class,'main_search_rental'])->name('car.search');
+    // Route::get('home', [AddCarController::class,'main_allcars']);
+    Route::get('/home', [AddCarController::class, 'main_allcars'])->name('home');
 
-        
-        // CLIENTS ROUTES  
-        Route::get('/account', [UserinfoController::class,'user_accountroute']);
-        Route::get('/my_bookings', [UserinfoController::class,'user_mybookings_route']);
-        Route::get('/my_ratings', [UserinfoController::class,'user_myratings_route']);
-        Route::get('/delete_account/{id}', [UserinfoController::class,'delete_user']);
-        
-        // ADMIN ROUTES
-        Route::put('/user_adminpp_update', [UserinfoController::class,'user_adminpp_update']);
-        Route::put('/user_info_update', [UserinfoController::class,'user_info_update']);
-        Route::put('/user_password_update', [UserinfoController::class,'user_password_update']);
-    
-        // RATINGS
-        Route::get('/ratings/{id}/ajaxview', [RatingsController::class,'user_ratings_modal']);
-        Route::post('/ratings_submit', [RatingsController::class,'submit_rating']);
-        Route::get('/user_view_ratings/{id}/ajaxview', [RatingsController::class,'user_ratings_ajaxview']);
-        Route::get('/user_edit_ratings/{id}/ajaxedit', [RatingsController::class,'user_ratings_ajaxedit']);
-        Route::get('/delete_user_ratings/{id}', [RatingsController::class,'user_ratings_delete']);
-        Route::put('/update_ratings', [RatingsController::class, 'user_update_ratings']);
+    Route::get('/van', [AddCarController::class,'main_van']);
+    Route::get('/7seaters', [AddCarController::class,'main_7seaters']);
+    Route::get('/pickup', [AddCarController::class,'main_pickup']);
+    Route::get('/hatchback', [AddCarController::class,'main_hatchback']);
+    Route::get('/sedan', [AddCarController::class,'main_sedan']);
+    Route::get('/cars/search', [AddCarController::class,'main_search_rental'])->name('car.search');
 
-
-        // BOOKINGS
-        Route::get('/bookingview/{id}/ajaxview', [BookingformsController::class,'user_booking_ajaxview']);
-        Route::get('/bookingforms/{slug}', [BookingformsController::class,'booking_route']);
-        Route::get('/weekly_bookingforms/{slug}', [BookingformsController::class,'weekly_booking_route']);
-        Route::get('/monthly_bookingforms/{slug}', [BookingformsController::class,'monthly_booking_route']);
-        Route::patch('/cancel_booking/{id}', [BookingformsController::class, 'cancelBooking']);
-
-        Route::post('/bookingformsubmit/{slug}', [BookingformsController::class,'booking_submit'])->name('book.submit');
-        Route::post('/weekly_bookingformsubmit/{slug}', [BookingformsController::class,'weekly_booking_submit'])->name('weeklybook.submit');
-        Route::post('/monthly_bookingformsubmit/{slug}', [BookingformsController::class,'monthly_booking_submit'])->name('monthlybook.submit');
-
-        Route::get('/success-booking', [BookingformsController::class, 'succes_booking_route']);
-
-        // NOTIFICATION
-        Route::get('/my_notification', [NotificationController::class,'user_notification']);
-        Route::put('/mark_as_read_user/{id}', [NotificationController::class, 'markNotificationAsRead_user']);
-        Route::get('/delete_user_notification/{id}', [NotificationController::class,'deleteNotification_user']);        
+    // BOOKINGS
+    Route::get('/bookingforms/{slug}', [BookingformsController::class,'booking_route']);
+    Route::get('/weekly_bookingforms/{slug}', [BookingformsController::class,'weekly_booking_route']);
+    Route::get('/monthly_bookingforms/{slug}', [BookingformsController::class,'monthly_booking_route']);
+    Route::post('/bookingformsubmit/{slug}', [BookingformsController::class,'booking_submit'])->name('book.submit');
+    Route::post('/weekly_bookingformsubmit/{slug}', [BookingformsController::class,'weekly_booking_submit'])->name('weeklybook.submit');
+    Route::post('/monthly_bookingformsubmit/{slug}', [BookingformsController::class,'monthly_booking_submit'])->name('monthlybook.submit');
+    Route::get('/success-booking', [BookingformsController::class, 'succes_booking_route']);       
 
 
 
-    });
-
-Route::get('/logout', [LoginController::class,'logout']);
-
-});
 
 
-
-// Google Auth
-Route::get('/auth/google/redirect', [SocialiteController::class, 'googleredirect']);
-Route::get('/auth/google/callback', [SocialiteController::class, 'googlecallback']);
-
-//Facebook Auth
-Route::get('/auth/facebook/redirect', [SocialiteController::class, 'facebookredirect']);
-Route::get('/auth/facebook/callback', [SocialiteController::class, 'facebookcallback']);
-
-//Facebook Auth
-Route::get('/auth/apple/redirect', [SocialiteController::class, 'appleredirect']);
-Route::get('/auth/apple/callback', [SocialiteController::class, 'applecallback']);
-Auth::routes();
 
 Route::get('/', function () {return view('home.homepage');});
+
+
 
 
 

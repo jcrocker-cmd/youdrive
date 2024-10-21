@@ -31,44 +31,13 @@
     @yield('script')
     @stack('script')
 
-    <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
-    
-    <!-- <script>
-
-    // Enable pusher logging - don't include this in production
-    Pusher.logToConsole = true;
-
-    var pusher = new Pusher('efda0cb5254ac4bb5450', {
-      cluster: 'ap1'
-    });
-
-    var channel = pusher.subscribe('channel-sample');
-    channel.bind('event-sample', function(data) {
-      alert(JSON.stringify(data));
-    });
-  </script> -->
-
-  <script>
-
-  // Enable pusher logging - don't include this in production
-  Pusher.logToConsole = true;
-
-  var pusher = new Pusher('7607621ec0998a311eee', {
-    cluster: 'ap1'
-  });
-
-  var channel = pusher.subscribe('my-channel');
-  channel.bind('my-event', function(data) {
-    alert(JSON.stringify(data));
-  });
-  </script>
-
-  <script>
+<script>
   $(window).on("load",function(){
-      $(".loader-wrapper").delay(1000).fadeIn("slow").fadeOut("slow");
+      $(".loader-wrapper").delay(500).fadeIn("slow").fadeOut("slow");
   });
-  </script>
+</script>
 
+ 
 <script>
 var chatbox = document.getElementById('fb-customer-chat');
 chatbox.setAttribute("page_id", "1057071350970751");

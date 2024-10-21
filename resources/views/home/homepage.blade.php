@@ -1,6 +1,6 @@
 @extends('home.layout.master')
 
-@section('title', 'AJAB Transport Services | Self-Drive Car Rental')
+@section('title', 'Balili Self-Drive Car Rental')
 
 @section('styles')
     @include('home.assets.style')

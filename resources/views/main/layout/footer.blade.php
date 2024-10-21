@@ -2,7 +2,7 @@
     <div class="footer-row">
         <div class="footer-col">
             <img src="/images/LOGOxwhitefooter.webp" alt="Youdrive" class="footer-logo">
-            <p class="pr-4">AJAB Transport Services Selfdrive Car rental is an organization established to cater the peoples’ need to use a vehicle. With cars of different seaters, color, and sizes, this organization aim to let people rent a car in the meantime.</p>
+            <p class="pr-4">Balili Car Rental is an organization established to cater the peoples’ need to use a vehicle. With cars of different seaters, color, and sizes, this organization aim to let people rent a car in the meantime.</p>
         </div>
         
         <div class="footer-col">
